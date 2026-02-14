@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pentru Iubita mea frumoasa Carla 💝</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#ff9ecf,#ff5fa2);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.container{
+padding:40px 20px;
+}
+
+h1{
+font-size:28px;
+}
+
+.question{
+font-size:40px;
+margin:40px 0;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+.yes{
+background:white;
+color:#ff3f8e;
+font-weight:bold;
+}
+
+.no{
+background:#ff3f8e;
+color:white;
+position:relative;
+}
+
+#message{
+margin-top:20px;
+font-size:18px;
+}
+
+#letter{
+display:none;
+padding:60px 20px;
+min-height:100vh;
+background:black;
+position:relative;
+overflow-y:auto;
+}
+
+.letter-text{
+max-width:700px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+position:relative;
+z-index:2;
+}
+
+.heart{
+position:absolute;
+color:#ff4da6;
+font-size:20px;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh) scale(0.5);}
+100%{transform:translateY(-10vh) scale(1.2);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="start">
+<h1>Pentru Iubita mea frumoasa Carla 💝</h1>
+<div class="question">Mă iubești? 😋</div>
+
+<button class="yes" onclick="showLetter()">Normalll</button>
+<button class="no" onmouseover="moveButton()">nu</button>
+
+<div id="message"></div>
+</div>
+
+<div id="letter">
+<div class="letter-text">
+
+<h2>Pentru tine, iubita mea frumoasă ❤️</h2>
+
+<p>
+Și câte nopți vei sta cu mine, câte zile vor urma…<br><br>
+
+Au trecut 2 ani și 3 luni și încă mă surprinde cât de mult însemni pentru mine.<br><br>
+
+Frumoasa mea mică, nu e vorba doar despre începuturi sau emoții de moment.  
+E despre tot ce am construit împreună.  
+E despre cum m-ai făcut să cresc, să învăț să iubesc matur și să prețuiesc ce contează cu adevărat.<br><br>
+
+Pentru mine nu ești doar iubita mea.  
+Ești prietena mea cea mai bună.  
+Ești omul cu care râd, cu care vorbesc orice, cu care pot fi eu fără mască.  
+Ești soțioara mea scumpă în sufletul meu.  
+Și ești cea mai frumoasă femeie din viața mea.<br><br>
+
+Îmi place felul în care mă atingi fără să spui nimic.  
+Îmi place cum mă privești când știi că sunt doar al tău.  
+Și uneori, când te văd zâmbind doar pentru mine,  
+îmi vine să te trag mai aproape și să-ți șoptesc cât de mult mă pierd în tine…  
+până uiți complet ce voiai să spui. 😏<br><br>
+
+După 2 ani și 3 luni, nu e doar pasiune.  
+E alegere.  
+E dor chiar și când ne-am văzut ieri.  
+E liniștea pe care o simt când te țin în brațe și știu că acolo îți e locul.<br><br>
+
+Și îți fac o promisiune:<br><br>
+
+Promit să te respect.  
+Promit să te protejez.  
+Promit să fiu sprijinul tău când îți e greu și bucuria ta când îți e bine.  
+Promit să nu las niciodată orgoliul să fie mai mare decât noi.  
+Și promit că nu voi pleca atunci când lucrurile devin dificile.<br><br>
+
+<strong>Ești fericirea mea și vreau să fim împreună pentru totdeauna 💝</strong>
+</p>
+
+</div>
+</div>
+
+<audio id="music" preload="auto">
+<source src="poem.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function moveButton(){
+const button=document.querySelector(".no");
+button.style.position="absolute";
+button.style.left=Math.random()*80+"%";
+button.style.top=Math.random()*80+"%";
+document.getElementById("message").innerText="Nu ai voie șmecherio 😑";
+}
+
+function showLetter(){
+document.getElementById("start").style.display="none";
+document.getElementById("letter").style.display="block";
+
+const music=document.getElementById("music");
+music.currentTime=165;
+music.play();
+
+setTimeout(createHearts,500);
+}
+
+function createHearts(){
+setInterval(()=>{
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.getElementById("letter").appendChild(heart);
+
+setTimeout(()=>heart.remove(),5000);
+},300);
+}
+</script>
+
+</body>
+</html>
